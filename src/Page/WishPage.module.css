@@ -97,16 +97,16 @@
   padding: 20px;
   max-width: 600px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border: 2px solid #ff6b81; /* Viền hồng nhẹ */
-  opacity: 0; /* Để hiệu ứng bounceIn hoạt động */
+  border: 2px solid #ff6b81;
+  opacity: 0;
 }
 
 .message {
   font-size: 1.5rem;
-  color: #333; /* Màu chữ tối để nổi trên nền trắng */
+  color: #333;
   font-family: "Georgia", serif;
   line-height: 1.6;
-  margin: 0; /* Bỏ margin mặc định của p */
+  margin: 0;
 }
 
 /* Hiệu ứng nhảy cho khung lời chúc */

@@ -8,10 +8,14 @@ const WishPage: React.FC = () => {
   const [showFireworks, setShowFireworks] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [hasPlayedMusic, setHasPlayedMusic] = useState(false); // Trạng thái kiểm soát nhạc
   const [playBirthdaySong] = useSound(birthdaySong, { volume: 0.5 });
 
   const handleCakeClick = () => {
-    playBirthdaySong();
+    if (!hasPlayedMusic) {
+      playBirthdaySong(); // Chỉ phát nhạc lần đầu tiên
+      setHasPlayedMusic(true); // Đánh dấu nhạc đã phát
+    }
     setShowFireworks(true);
     setIsClicked(true);
     setShowMessage(true);

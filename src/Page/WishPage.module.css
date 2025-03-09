@@ -1,0 +1,268 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 80px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.highlight {
+  color: #ff4757;
+  font-weight: bold;
+}
+
+.cakeContainer {
+  cursor: pointer;
+  margin: 40px 0;
+  width: fit-content;
+  position: relative;
+  z-index: 2;
+}
+
+.cakeWrapper {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  animation: zoomIn 1s ease-in-out;
+}
+
+.cake {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* Hiệu ứng ánh sáng nhấp nháy */
+.glow {
+  animation: glow 1s infinite alternate;
+}
+
+.candle {
+  position: absolute;
+  width: 12px;
+  height: 50px;
+  background: #fff;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.candle2 {
+  left: 40%;
+}
+
+.candle3 {
+  left: 60%;
+}
+
+.flame {
+  width: 10px;
+  height: 15px;
+  background: #ff6b81;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  margin-top: -5px;
+  animation: flicker 0.5s infinite alternate;
+}
+
+/* Khung giấy cho lời chúc */
+.messageContainer {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 600px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ff6b81; /* Viền hồng nhẹ */
+  opacity: 0; /* Để hiệu ứng bounceIn hoạt động */
+}
+
+.message {
+  font-size: 1.5rem;
+  color: #333; /* Màu chữ tối để nổi trên nền trắng */
+  font-family: "Georgia", serif;
+  line-height: 1.6;
+  margin: 0; /* Bỏ margin mặc định của p */
+}
+
+/* Hiệu ứng nhảy cho khung lời chúc */
+.bounceIn {
+  animation: bounceIn 1.5s ease-out forwards;
+}
+
+.love {
+  color: #ff6b81;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #ff6b81, 0 0 30px #ff4757;
+  }
+  100% {
+    box-shadow: 0 0 20px #fff, 0 0 40px #ff6b81, 0 0 50px #ff4757;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.bubbleContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: bubbleUp 5s ease-in-out forwards;
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1);
+    opacity: 0;
+  }
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="2" fill="white" opacity="0.5"/></svg>');
+  animation: particles 10s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes particles {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}

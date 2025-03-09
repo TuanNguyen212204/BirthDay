@@ -1,5 +1,5 @@
 import "./App.css";
-import Heart from "./Page/Heart";
+import Heart from "./Page/WishPage";
 
 function App() {
   return (
